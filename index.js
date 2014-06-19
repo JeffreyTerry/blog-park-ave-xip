@@ -3,9 +3,8 @@ var config = require('./config/config')
   , mongoose = require('mongoose')
   , http = require('http')
   , fs = require('fs');
-  
 
-// Open the MongoDB connection 
+// Open the MongoDB connection
 mongoose.connect(config.db);
 var db = mongoose.connection;
 db.on('error', function () {

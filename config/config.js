@@ -3,30 +3,33 @@ var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development';
 
+process.env.BLOG_USER_HASH = '$2a$10$LzQFXPB1RcBa3JmSEdr0YOlMTkJVmqkdPOzdM3H3Si8j2xoQDVtX6';
+process.env.BLOG_PASS_HASH = '$2a$10$o2/3wMipYP/Wpbit/rR/0OyJyoeCYAlF39fJCxtEBkkfsZcqrpd.2';
+
 // Configuration for different environments
 var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'XIP'
+      name: 'XiP-Blog'
     },
     port: 3000,
-    db: 'mongodb://localhost/XIP-development'
+    db: 'mongodb://localhost/XiP-Blog-development'
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'XIP'
+      name: 'XiP-Blog'
     },
     port: 3000,
-    db: 'mongodb://localhost/XIP-test'
+    db: 'mongodb://localhost/XiP-Blog-test'
   },
 
   production: {
     root: rootPath,
     app: {
-      name: 'XIP'
+      name: 'XiP-Blog'
     },
     port: 3000,
     cred: {
@@ -37,7 +40,7 @@ var config = {
         ca: fs.readFileSync('/ssl/ca/ca.crt')
         */
     },
-    db: 'mongodb://localhost/XIP-production'
+    db: 'mongodb://localhost/XiP-Blog-production'
   }
 };
 

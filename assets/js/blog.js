@@ -8,4 +8,12 @@ $(document).ready(function(){
       });
     }
   });
+
+  $('.authenticate-button').click(function(){
+    console.log('yolo', $('.pass-input').val());
+    $.post('/login', {password: $('.pass-input').val()});
+  });
 });
+
+
+

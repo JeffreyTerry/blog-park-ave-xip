@@ -36,7 +36,7 @@ exports.index = function(req, res){
 
       res.render('blog', {
         posts: posts,
-        title: 'Park Ave Blog'
+        title: 'Project XiP Blog'
       });
     }
   });
