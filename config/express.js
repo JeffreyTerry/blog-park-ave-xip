@@ -5,10 +5,8 @@ var express = require('express'),
 var basic = auth.basic({
     realm: "Sign in to the Project XiP blog!"
   }, function (username, password, callback) { // Custom authentication method.
-    console.log(username, password);
     bcrypt.compare(password, process.env.BLOG_PASS_HASH, function(err, response){
       if(response){
-        console.log(response);
         callback(true);
       }else{
         callback(false);

@@ -1,5 +1,6 @@
 var _ = require('underscore'),
-    blog = require('../app/controllers/blog');
+    blog = require('../app/controllers/blog'),
+    comment = require('../app/controllers/comment');
 
 // Stores a dictionary with route paths as keys and their corresponding static html files as values.
 var URLToFileMap = {
@@ -22,7 +23,10 @@ module.exports = function(app){
   });
 
   app.get( '/', blog.index);
-  app.post('/blog/new', blog.create);
+  app.get( '/blog', blog.getAll);
+  app.post('/blog', blog.create);
+  app.get( '/comment', blog.create);
+  app.post('/comment/:post', comment.create);
 };
 
 

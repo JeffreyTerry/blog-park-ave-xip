@@ -6,6 +6,12 @@ block js
   script(type='text/javascript', src='js/blog.js')
   
 block content
+    input.post-data(type='text', style='display: none', value='#{posts}')
+    script(type='text/template', id='new-comment-template')
+      .new-comment-template
+        textarea.new-comment-text.form-control(rows=5)
+        br
+        button(type='button').btn.btn-success.form-control.post-comment-button Post Comment
     .row.bruce-banner
       .col-xs-8.col-xs-offset-2
         h1.page-header Park Ave Blog
@@ -20,6 +26,11 @@ block content
                   strong= months[post.date.getMonth()] + ' ' + post.date.getDate() + ', ' + post.date.getFullYear()
                 br
                 p= post.text
+                br
+                h3.comment-box-heading Comments
+                each comment in post.comments
+                  .comment-body= comment.text
+                .btn.btn-info.form-control.comment-button(id='write-comment-' + index) Write Comment
     br
     .row
       .col-sm-8.col-sm-offset-2
