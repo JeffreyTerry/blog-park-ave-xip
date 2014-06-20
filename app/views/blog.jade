@@ -30,14 +30,14 @@ block content
                 h3.comment-box-heading Comments
                 each comment in post.comments
                   .comment-body= comment.text
-                .btn.btn-info.form-control.comment-button(id='write-comment-' + index) Write Comment
+                .btn.btn-info.form-control.comment-button(id='write-comment-' + index) Comment
     br
     .row
       .col-sm-8.col-sm-offset-2
         .row
           .col-sm-10.col-sm-offset-1
             div.panel.panel-primary
-              div.panel-heading Write a post
+              div.panel-heading Post
               div.panel-body
                 textarea.form-control.new-post-text(rows=7)
                 br

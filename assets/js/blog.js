@@ -14,9 +14,10 @@ $(document).ready(function(){
     $.get('/blog', function(posts){
       var postId = posts[postIndex]._id;
       $.post('/comment/' + postId, {text: $('.new-comment-text').val(), post: postId}, function(data){
-        $($('.comment-button')[postIndex]).before('<div class="comment-body">' + data.text + '</div>');
-        $('.new-comment-template').remove();
-        $('.comment-button').css('display', 'block');
+        // $($('.comment-button')[postIndex]).before('<div class="comment-body">' + data.text + '</div>');
+        // $('.new-comment-template').remove();
+        // $('.comment-button').css('display', 'block');
+        location.reload();
       });
     });
   }
